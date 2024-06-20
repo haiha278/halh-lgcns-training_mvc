@@ -1,0 +1,73 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 800px;
+    border: 2px solid black;
+    margin: 30px auto;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    margin: 10px;
+}
+
+.register-form {
+    display: grid;
+    row-gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.input-info {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    column-gap: 20px;
+}
+
+label {
+    font-size: 25px;
+}
+
+.input {
+    width: 270px;
+}
+
+.radio-input{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 30px;
+}
+
+.input::placeholder {
+    font-size: 20px;
+}
+
+.input:hover {
+    border-radius: 3px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: #ff0000;
+    font-size: 20px;
+}
+
+.submit-button {
+    width: 100%;
+    cursor: pointer;
+    padding: 7px;
+    font-size: 20px;
+}
+
+.submit-button:hover {
+    background-color: #595959;
+    color: white;
+}

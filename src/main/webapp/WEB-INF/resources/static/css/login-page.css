@@ -1,0 +1,75 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    margin: 10px;
+}
+
+.container {
+    max-width: 1200px;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#login-form-id{
+    margin-top: 30px;
+}
+
+.login-form {
+    display: grid;
+    row-gap: 20px;
+    justify-content: center;
+}
+
+.input-info {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    column-gap: 20px;
+}
+
+label {
+    font-size: 25px;
+}
+
+.input {
+    width: 270px;
+}
+
+.input:hover {
+    border-radius: 3px;
+}
+
+.submit{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.sign-in-button{
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    font-size: 17px;
+    padding: 3px;
+    margin-bottom: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    width: fit-content;
+    margin-left: auto;
+}
+a:hover{
+    color: #ff1f1f;
+    font-weight: bold;
+}

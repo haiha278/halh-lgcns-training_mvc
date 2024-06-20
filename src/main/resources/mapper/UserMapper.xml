@@ -1,0 +1,13 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.training.springmvc.repository.UserMapper">
+    <resultMap id="UserResultMap" type="com.training.springmvc.entity.User">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="name" column="name"/>
+        <result property="age" column="age"/>
+        <result property="gender" column="gender"/>
+        <result property="dob" column="dob"/>
+        <association property="role" column="role_id" resultMap="RoleResultMap"/>
+    </resultMap>
+</mapper>
