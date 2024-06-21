@@ -13,4 +13,6 @@ public interface UserService {
     LoginDTO findByUsername(String username);
 
     int addUser(RegisterDTO registerDTO);
+
+    int deleteUserByUsername(String username);
 }

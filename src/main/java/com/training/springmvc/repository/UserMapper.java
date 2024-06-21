@@ -14,7 +14,11 @@ public interface UserMapper {
     @ResultMap("UserResultMap")
     List<User> findAll();
 
-    @Select("select * from user where username =  #{username}")
+//    @Select("select * from user where username =  #{username}")
+//    @ResultMap("UserResultMap")
+//    Optional<User> findByUsername(String username);
+
+    @Select("select u.username, u.password, u.name, u.age, u.gender, u.dob, r.role_name from user u join role r on u.role_id = r.id where u.username =  #{username}")
     @ResultMap("UserResultMap")
     Optional<User> findByUsername(String username);
 
@@ -23,4 +27,8 @@ public interface UserMapper {
             "VALUES (#{username}, #{password}, #{name}, #{age}, #{gender}, #{dob}, #{role.roleId})")
     @Options(useGeneratedKeys = true, keyProperty = "id")
     int insertUser(User user);
+
+
+    @Delete("DELETE From user where username = #{username}")
+    int deleteUserByUsername(String username);
 }

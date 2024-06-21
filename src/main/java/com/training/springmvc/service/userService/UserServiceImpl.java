@@ -49,8 +49,11 @@ public class UserServiceImpl implements UserService {
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
             LoginDTO loginDTO = (LoginDTO) mapper.mapToDTO(user, LoginDTO.class);
+            loginDTO.setRole(user.getRole().getRoleName());
             return loginDTO;
         }
+        session.commit();
+        session.close();
         return null;
     }
 
@@ -68,6 +71,18 @@ public class UserServiceImpl implements UserService {
         user.setRole(role);
 
         int row_effected = user_mapper.insertUser(user);
+        session.commit();
+        session.close();
+        return row_effected;
+    }
+
+    @Override
+    public int deleteUserByUsername(String username) {
+        SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
+        UserMapper user_mapper = session.getMapper(UserMapper.class);
+
+        int row_effected = user_mapper.deleteUserByUsername(username);
+
         session.commit();
         session.close();
         return row_effected;
