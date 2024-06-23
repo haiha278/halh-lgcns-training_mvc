@@ -31,4 +31,7 @@ public interface UserMapper {
 
     @Delete("DELETE From user where username = #{username}")
     int deleteUserByUsername(String username);
+
+    @Update("UPDATE user SET name = #{name}, age = #{age}, gender = #{gender}, dob = #{dob} WHERE username = #{username}")
+    int updateByUsername(User user);
 }

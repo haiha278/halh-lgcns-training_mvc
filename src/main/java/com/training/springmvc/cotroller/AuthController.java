@@ -26,7 +26,7 @@ public class AuthController {
 
     @PostMapping("/login")
     public String handleLoginRequest(@RequestParam("username") String username, @RequestParam("password") String password, Model model) {
-        LoginDTO loginDTO = userService.findByUsername(username);
+        LoginDTO loginDTO = userService.login(username);
         if (loginDTO != null && loginDTO.getPassword().equals(password)) {
             model.addAttribute("username", loginDTO.getUsername());
             model.addAttribute("role", loginDTO.getRole());
